@@ -40,7 +40,9 @@ function FsGlobe() {
   controls.minDistance = 1.2;
   controls.maxDistance = 4;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.6;
+  controls.autoRotateSpeed = 0.8;
+  controls.maxPolarAngle = THREE.MathUtils.degToRad(120); // Allowing rotation up to 120 degrees
+  controls.minPolarAngle = THREE.MathUtils.degToRad(30);  // Setting the initial tilt to 30 degrees
   // //  controls.enableDamping = true;
   //   controls.campingFactor = 0.25;
   controls.enableZoom = false;
