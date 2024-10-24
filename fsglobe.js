@@ -31,8 +31,8 @@ function FsGlobe() {
   const near = 0.1;
   const far = 10;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 2.5;
-  camera.rotation.x = THREE.MathUtils.degToRad(30);
+  camera.position.z = 1.5;
+  camera.position.set(0, 1.5, 2.5);  // Adjust the Y value to be higher
 
   const controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping = true;
@@ -41,8 +41,8 @@ function FsGlobe() {
   controls.maxDistance = 4;
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.8;
-  controls.maxPolarAngle = THREE.MathUtils.degToRad(120); // Allowing rotation up to 120 degrees
-  controls.minPolarAngle = THREE.MathUtils.degToRad(30);  // Setting the initial tilt to 30 degrees
+  controls.minPolarAngle = THREE.MathUtils.degToRad(0);    // Look directly at the equator
+  controls.maxPolarAngle = THREE.MathUtils.degToRad(60);   // Limit to 60 degrees to focus on northern hemisphere
   // //  controls.enableDamping = true;
   //   controls.campingFactor = 0.25;
   controls.enableZoom = false;
