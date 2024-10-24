@@ -32,6 +32,7 @@ function FsGlobe() {
   const far = 10;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z = 2.5;
+  camera.rotation.x = THREE.MathUtils.degToRad(30);
 
   const controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping = true;
@@ -65,7 +66,6 @@ function FsGlobe() {
   });
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
-  mesh.rotation.x = THREE.MathUtils.degToRad(-30);
   
   material.map.needsUpdate = true;
 
